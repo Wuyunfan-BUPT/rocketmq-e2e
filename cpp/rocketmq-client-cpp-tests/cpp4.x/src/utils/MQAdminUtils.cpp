@@ -51,7 +51,7 @@ std::string MQAdminUtils::createTopic(const std::string &topicName, const std::s
 {
   // use absolute path
   std::string path = getRootPath();
-  std::string command = "sh " + path + "/common/bin/mqadmin updateTopic -t " + topicName;
+  std::string command = "sh " + path + "/rocketmq-admintools/bin/mqadmin updateTopic -t " + topicName;
   if (!nameserver.empty())
   {
     command = command + " -n " + nameserver;
@@ -72,7 +72,7 @@ std::string MQAdminUtils::createDelayTopic(const std::string &topicName, const s
 {
   // use absolute path
   std::string path = getRootPath();
-  std::string command = "sh " + path + "/common/bin/mqadmin updateTopic -t " + topicName;
+  std::string command = "sh " + path + "/rocketmq-admintools/bin/mqadmin updateTopic -t " + topicName;
   if (!nameserver.empty())
   {
     command = command + " -n " + nameserver;
@@ -94,7 +94,7 @@ std::string MQAdminUtils::createFIFOTopic(const std::string &topicName, const st
 {
   // use absolute path
   std::string path = getRootPath();
-  std::string command = "sh " + path + "/common/bin/mqadmin updateTopic -t " + topicName;
+  std::string command = "sh " + path + "/rocketmq-admintools/bin/mqadmin updateTopic -t " + topicName;
   if (!nameserver.empty())
   {
     command = command + " -n " + nameserver;
@@ -116,7 +116,7 @@ std::string MQAdminUtils::createTransactionTopic(const std::string &topicName, c
 {
   // use absolute path
   std::string path = getRootPath();
-  std::string command = "sh " + path + "/common/bin/mqadmin updateTopic -t " + topicName;
+  std::string command = "sh " + path + "/rocketmq-admintools/bin/mqadmin updateTopic -t " + topicName;
   if (!nameserver.empty())
   {
     command = command + " -n " + nameserver;
@@ -138,7 +138,7 @@ std::string MQAdminUtils::createOrderlyConsumerGroup(const std::string &consumer
 {
   // use absolute path
   std::string path = getRootPath();
-  std::string command = "sh " + path + "/common/bin/mqadmin updateSubGroup -g " + consumerGroup;
+  std::string command = "sh " + path + "/rocketmq-admintools/bin/mqadmin updateSubGroup -g " + consumerGroup;
   if (!nameserver.empty())
   {
     command = command + " -n " + nameserver;
@@ -159,7 +159,7 @@ std::string MQAdminUtils::createOrderlyConsumerGroup(const std::string &consumer
 std::string MQAdminUtils::clusterList(const std::string &nameserver)
 {
   std::string path = getRootPath();
-  std::string command = "sh " + path + "/common/bin/mqadmin clusterlist";
+  std::string command = "sh " + path + "/rocketmq-admintools/bin/mqadmin clusterlist";
   if (!nameserver.empty())
   {
     command = command + " -n " + nameserver;

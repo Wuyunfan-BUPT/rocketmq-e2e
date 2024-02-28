@@ -42,11 +42,11 @@ std::string NameUtils::generateMD5Sum(const std::string &input)
     unsigned int hash_length;
 
     const EVP_MD *sha256_md = EVP_sha256();
-    EVP_MD_CTX *mdctx = EVP_MD_CTX_new();
+    EVP_MD_CTX *mdctx = EVP_MD_CTX_create();
     EVP_DigestInit_ex(mdctx, sha256_md, nullptr);
     EVP_DigestUpdate(mdctx, reinterpret_cast<const unsigned char *>(input.c_str()), input.length());
     EVP_DigestFinal_ex(mdctx, hash, &hash_length);
-    EVP_MD_CTX_free(mdctx);
+    EVP_MD_CTX_destroy(mdctx);
 
     std::stringstream ss;
     for (unsigned int i = 0; i < hash_length; i++)
